@@ -26,7 +26,12 @@ function App() {
         }
     };
 
+    const handleSubmit =(e:any) => {
+      e.preventDefault()
+    }
+
     return (
+      <form onSubmit={handleSubmit}>
         <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
             <h2>WebSocket Chat</h2>
             <div style={{
@@ -46,8 +51,9 @@ function App() {
                 placeholder="Type a message..."
                 style={{ marginRight: "10px" }}
             />
-            <button onClick={sendMessage}>Send</button>
+            <input type="submit" onClick={() => sendMessage()} />
         </div>
+        </form>
     );
 }
 
